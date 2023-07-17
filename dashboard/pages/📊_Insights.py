@@ -123,11 +123,11 @@ def main():
 
     plots_configs()
 
-    header_image = 'images/insights.jpg'
+    header_image = 'dashboard/images/insights.jpg'
     image_header(image_path=header_image)
     
 
-    path = '../DATA/train.csv'
+    path = 'DATA/train.csv'
     df_eda = load_data(path)
 
     st.markdown('# Sales Insights')

@@ -165,12 +165,12 @@ def main():
 
     plots_configs()
 
-    header_image = 'images/header_demand.jpg'
+    header_image = 'dashboard/images/header_demand.jpg'
     image_header(image_path=header_image)
     
     
 
-    path = '../DATA/train.csv'
+    path = 'DATA/train.csv'
     data = load_data(path)
 
     top_10_prodcuts = top_11_items(data)

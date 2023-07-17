@@ -52,7 +52,7 @@ def main():
     )
     st.sidebar.success('Select the page above')
 
-    path='../DATA/train.csv'
+    path='DATA/train.csv'
     data = load_data(path)
 
     st.markdown('# Welcome to the Demand Analysis Report')
