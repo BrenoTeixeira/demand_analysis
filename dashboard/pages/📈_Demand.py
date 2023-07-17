@@ -207,34 +207,34 @@ def main():
 
     
     st.markdown(f"### Item {product}")
-    st.markdown("<h2 style='text-align: center'> Distribution of Means - CLT </h2>", unsafe_allow_html=True)
-
-    st.pyplot(hist_means(samples_means, product=product, bins=10))
 
     st.markdown("## CEO Questions")
-    st.markdown(f"### 1. What is the probability that I will sell `{target_sale}` units a day?")
+    st.markdown(f"#### 1. What is the probability that I will sell `{target_sale}` units a day?")
     
     prob = probability_sale_at_least(target_sale, mean=avg, st_dev=stand)
 
     st.write(f'The probability of selling `{target_sale}` units or more is **{prob:.2%}**.')
    
 
-    st.markdown(f"### 2.Given the demand, what is the probability of stock-out if I arrange to have `{stock}` units in stock every day?")
+    st.markdown(f"#### 2.Given the demand, what is the probability of stock-out if I arrange to have `{stock}` units in stock every day?")
 
     proba = probability_sale_at_least(stock, mean=avg, st_dev=stand)
 
     st.write(f'The probability of stocking out if you arrange to have `{stock}` units every day is **{proba:.2%}**.')
 
-    st.markdown(f"### 3. What is the range which contains `{range_percent:.0%} `of my possible demand?")
+    st.markdown(f"#### 3. What is the range which contains `{range_percent:.0%} `of my possible demand?")
 
     lw, up = interval_perc(mean=avg, st_dev=stand, percent=range_percent)
 
-    st.markdown(f"### 4. How much stock should I have if I want `{prob_stocking_out:.0%}` probability of stocking out?")
+    st.markdown(f"#### 4. How much stock should I have if I want `{prob_stocking_out:.0%}` probability of stocking out?")
 
     result = stocking_out_value(mean=avg, st_dev=stand, percent=1-prob_stocking_out)
 
     st.write(f'You should have **{result}** units in your stock if you want a `{prob_stocking_out:.0%}` probability of stocking out.')
 
+    st.markdown("<h2 style='text-align: center'> Distribution of Means - CLT </h2>", unsafe_allow_html=True)
+
+    st.pyplot(hist_means(samples_means, product=product, bins=10))
 
 if __name__ == '__main__':
     main()
