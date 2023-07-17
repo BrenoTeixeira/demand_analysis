@@ -43,7 +43,7 @@ def weekly_sales(data):
     return avg_weekly_sales
 
 
-if __name__ == '__main__':
+def main():
 
     st.set_page_config(
         page_title='Home Page',
@@ -72,6 +72,11 @@ if __name__ == '__main__':
     avg_monthly_sales.metric(label='Avg Monthly Sales', value=f'{monthly_sales(data):,.1f}')
 
     avg_weekly_sales.metric(label='Avg Weekly Sales', value=f'{weekly_sales(data):,.1f}')
+
+if __name__ == '__main__':
+
+
+    main()
 
 
    

@@ -158,7 +158,8 @@ def image_header(image_path):
         new_image = image.resize((800, 200))
         st.image(image=new_image, width=800)
 
-if __name__ == '__main__':
+
+def main():
 
     st.set_page_config(page_title='Products Demand Analysis', page_icon=":chart_with_upward_trend:")
 
@@ -235,6 +236,6 @@ if __name__ == '__main__':
     st.write(f'You should have **{result}** units in your stock if you want a `{prob_stocking_out:.0%}` probability of stocking out.')
 
 
-    
+if __name__ == '__main__':
+    main()
 
- 

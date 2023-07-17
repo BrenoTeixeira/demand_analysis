@@ -117,7 +117,7 @@ def image_header(image_path):
         st.image(image=new_image, width=800)
 
 
-if __name__ == '__main__':
+def main():
 
     st.set_page_config(page_title='Insights', page_icon=":bar_chart:")
 
@@ -159,4 +159,9 @@ if __name__ == '__main__':
 
     st.markdown("<h2 style='text-align: center'> Sales Growth % over year</h2>", unsafe_allow_html=True)
     st.pyplot(growth(df_eda=df_eda.query(f'item.isin({products})'), freq='A'))
+
+if __name__ == '__main__':
+    
+    main()
+
 
